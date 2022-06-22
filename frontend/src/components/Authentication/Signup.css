@@ -1,0 +1,8 @@
+.add-picture-icon{
+    position: absolute;
+    bottom: 4%;
+    right: 41%;
+    color: teal;
+    z-index: 99;
+    cursor: pointer;
+}
