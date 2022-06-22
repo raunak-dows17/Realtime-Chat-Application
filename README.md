@@ -16,3 +16,5 @@ admin can add remove or change the name of the group
 while other members cannot.
 
 so go ahead and try it.
+![Screenshot (380)](https://user-images.githubusercontent.com/81477892/175096348-9fb3c76f-1b00-4e99-b9a7-1657f9c67b9e.png)
+![Screenshot (381)](https://user-images.githubusercontent.com/81477892/175096497-389ad237-fe34-41ad-ac11-b3f9b0423ae0.png)
