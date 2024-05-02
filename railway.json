@@ -5,7 +5,7 @@
   },
   "deploy": {
     "numReplicas": 1,
-    "startCommand": "nodemon backend/server.js",
+    "startCommand": "node backend/server.js",
     "sleepApplication": true,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
