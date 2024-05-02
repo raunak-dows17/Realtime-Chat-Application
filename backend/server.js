@@ -1,5 +1,5 @@
 const express = require("express");
-const dotenv = require("dotenv");
+require("dotenv").config();
 const { chats } = require("./Data/data");
 const connectDB = require("./config/db");
 const colors = require("colors");
@@ -9,21 +9,16 @@ const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
 
-dotenv.config();
 connectDB();
 const app = express();
 
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//   res.send("API is Running Successfully");
-// });
-
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 
-// Deployement
+// Deployment
 
 const __dirname1 = path.resolve();
 if (process.env.NODE_ENV === "production") {
@@ -47,7 +42,7 @@ const PORT = process.env.PORT || 5000;
 
 const server = app.listen(
   PORT,
-  console.log(`Server started on PORT ${PORT}`.green.bold)
+  console.log(`Server running on http://localhost:${PORT}`.green.underline)
 );
 
 const io = require("socket.io")(server, {
@@ -58,7 +53,7 @@ const io = require("socket.io")(server, {
 });
 
 io.on("connection", (socket) => {
-  console.log("Connected to socket.io");
+  console.log("Connected to socket.io".green.underline);
 
   socket.on("setup", (userData) => {
     socket.join(userData._id);
